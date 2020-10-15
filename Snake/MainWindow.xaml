@@ -8,6 +8,8 @@
         KeyDown="Keydown"
         Title="Snake" Height="500" Width="500" ResizeMode="NoResize" Foreground="Black">
     <Canvas Background="#FF2E2E2E"  >
-        <Rectangle x:Name="alement" Width="20" Height="20" Fill="White" Canvas.Left="250" Canvas.Top="250"/>
+        <Rectangle x:Name="snake" Width="15" Height="15" Fill="White" Canvas.Left="250" Canvas.Top="250"/>
+        <Rectangle x:Name="apple" Width="15" Height="15" Fill="Red" Canvas.Left="200" Canvas.Top="200"/>
+        <Label x:Name="scoretext" Content="0" Foreground="White"/>
     </Canvas>
 </Window>
