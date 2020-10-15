@@ -22,7 +22,8 @@ namespace Snake
     public partial class MainWindow : Window
     {
         int move = 0;
-        int speed = 3;
+        int speedx = 3;
+        int speedy = 0;
         int posx = 250;
         int posy = 250;
         public MainWindow()
@@ -31,16 +32,45 @@ namespace Snake
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Tick += new EventHandler(timer_tick);
-            timer.Interval = TimeSpan.FromSeconds(0.5f);
+            timer.Interval = TimeSpan.FromSeconds(0.05f);
             timer.Start();
         }
-        void timer_tick( object render, EventArgs e)
+        
+        void timer_tick( object sender, EventArgs e)
         {
-            if(move == 0)
-            {
-                Canvas.SetLeft(alement, posx);
-                posx += speed;
-            }
+          
+            Canvas.SetLeft(alement , posx);
+            Canvas.SetTop(alement, posy);
+            posx += speedx;
+            posy += speedy;
+            
+            
         }
+        private void Keydown(object sender,KeyEventArgs  e)
+        {
+            if(e.Key == Key.A)
+            {
+                speedx = -3;
+                speedy = 0;
+            }
+            else if (e.Key == Key.D)
+            {
+                speedx = 3;
+                speedy = 0;
+            }
+            else if (e.Key == Key.W)
+            {
+                speedx = 0;
+                speedy = -3;
+            }
+            else if (e.Key == Key.S)
+            {
+                speedx = 0;
+                speedy = 3;
+            }
+
+        }
+
+    
     }
 }

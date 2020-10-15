@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Snake"
         mc:Ignorable="d"
+        KeyDown="Keydown"
         Title="Snake" Height="500" Width="500" ResizeMode="NoResize" Foreground="Black">
-    <Canvas Background="#FF2E2E2E">
+    <Canvas Background="#FF2E2E2E"  >
         <Rectangle x:Name="alement" Width="20" Height="20" Fill="White" Canvas.Left="250" Canvas.Top="250"/>
     </Canvas>
 </Window>
